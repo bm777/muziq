@@ -1,4 +1,8 @@
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
+const Nft = dynamic(() => import('@/comp/Nft'), {
+  loading: () => <p>Loading...</p>,
+})
 
 export default function Home() {
   return (
@@ -14,8 +18,8 @@ export default function Home() {
             </div>
           </div>
           <div className=' mt-[10px] overflow-auto hover:scale-125 transform transition-all duration-[500ms]'>
-            {/* <Image src={"/nft.png"} width={400} height={400} className="w-full rounded-md"/> */}
-            <iframe _ngcontent-dyi-c98="" width="100%" height="500" allow="accelerometer; camera; gyroscope; microphone; xr-spatial-tracking; midi;" className="rounded-md w-full" sandbox="allow-scripts allow-downloads" scrolling="" src="https://assets.objkt.media/file/assets-003/QmcTuv6dfyXfPz9Mpk8PcpXjwguwHucTEiQf5c3cikBSu9/artifact/index.html?objkt=8&amp;creator=tz1XxTKUFaCRZqv5BMQviuxrQs8VciG9ffE6&amp;viewer=null"></iframe>
+            {/* <Image src={"/nft.png"} width={400} height={400} className="w-full rounded-md"/> */} 
+            <Nft></Nft>
           </div>
           <div className=' flex justify-between items-center mt-3  mx-[2%]'>
             <div className='px-[15px] py-[3px] bg-[#F2F2F2] rounded-md hover:underline hover:cursor-pointer'>
